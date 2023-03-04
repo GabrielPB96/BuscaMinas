@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Celda
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Celda\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=x\ y
+comment1.target=Celda(int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Celda\r\n
+comment2.params=x\ y\ estado
+comment2.target=Celda(int,\ int,\ Estado)
+comment3.params=
+comment3.target=Estado\ getEstado()
+comment4.params=nuevoEstado
+comment4.target=void\ setEstado(Estado)
+comment5.params=
+comment5.target=void\ picar()
+comment6.params=
+comment6.target=void\ ponerBandera()
+numComments=7
