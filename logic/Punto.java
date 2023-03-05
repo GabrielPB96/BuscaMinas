@@ -23,4 +23,13 @@ public class Punto
     
     public int getFila(){return this.fila;}
     public int getColumna(){return this.columna;}
+    
+    public boolean equals(Object otro) {
+        if(otro instanceof Punto){
+            Punto o = (Punto)otro;
+            return o.fila == this.fila && o.columna == this.columna;
+        }else {
+            return false;
+        }
+    }
 }

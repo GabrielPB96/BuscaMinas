@@ -1,5 +1,6 @@
 package logic;
 import java.util.ArrayList;
+import java.util.function.Consumer;
 
 /**
  * Write a description of class Tablero here.
@@ -48,8 +49,8 @@ public class Tablero
         int contador = 0;
         for(Punto p : movimientos) {
             int f = p.getFila(), c = p.getColumna();
-            if(fila - f >= 0 && fila + f < tamanio && columna - c >= 0 && columna+c<tamanio){
-                if(tablero[fila+f][columna+1].getEstado() == Estado.BOMBA) {
+            if(fila + f >= 0 && fila + f < tamanio && columna + c >= 0 && columna+c<tamanio){
+                if(tablero[fila+f][columna+c].getEstado() == Estado.BOMBA) {
                     contador++;
                 }
             }
@@ -58,9 +59,11 @@ public class Tablero
     }
 
     public void inicializarBombas(ArrayList<Punto> valores) {
-        for(Punto p : valores) {
-            tablero[p.getFila()][p.getColumna()].setEstado(Estado.BOMBA);
-        }
+        valores.forEach(new Consumer<Punto>(){
+            public void accept(final Punto p) {
+                tablero[p.getFila()][p.getColumna()].setEstado(Estado.BOMBA);
+            }
+        });
         inicializarEstadoCeldas();
     }
 
@@ -74,5 +77,21 @@ public class Tablero
 
     public Celda[][] getTablero() {
         return tablero;
+    }
+    
+    public void showTablero() {
+        for(int f=0; f<tamanio;f++){
+            System.out.print("| ");
+            for(int c=0; c<tamanio;c++){
+                if(tablero[f][c].getEstado() == Estado.VACIO) {
+                    System.out.print("  |");
+                }else if(tablero[f][c].getEstado() == Estado.BOMBA){
+                    System.out.print("X |");
+                }else{
+                    System.out.print(tablero[f][c].getEstado() +" |");
+                }
+            }
+            System.out.println();
+        }
     }
 }
