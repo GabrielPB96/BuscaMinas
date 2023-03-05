@@ -7,7 +7,9 @@ package logic;
  * @author (your name here)
  * @version (version number or date here)
  */
-public enum Estado
+public interface Estado
 {
-    BOMBA, NUMERO, VACIO, BANDERA
+    int BOMBA = -10;
+    int VACIO = 0;
+    int BANDERA = -20;
 }

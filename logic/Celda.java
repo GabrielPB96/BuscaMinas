@@ -9,7 +9,7 @@ package logic;
  */
 public class Celda
 {
-    private Estado estado;
+    private int estado;
     private Punto posicion;
     /**
      * Constructor for objects of class Celda
@@ -20,18 +20,18 @@ public class Celda
         this.estado = Estado.VACIO;
     }
     
-    public Celda(int x, int y, Estado estado)
+    public Celda(int x, int y, int estado)
     {
         this.posicion = new Punto(x, y);
         this.estado = estado;
         this.estado = Estado.VACIO;
     }
     
-    public Estado getEstado() {
+    public int getEstado() {
         return this.estado;
     }
     
-    public void setEstado(Estado nuevoEstado) {
+    public void setEstado(int nuevoEstado) {
         this.estado = nuevoEstado;
     }
     
